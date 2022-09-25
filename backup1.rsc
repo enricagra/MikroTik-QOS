@@ -1,8 +1,3 @@
-# aug/24/2022 08:35:42 by RouterOS 6.48.6
-# software id = 8E1V-4G71
-#
-# model = RB750Gr3
-# serial number = D5030D2010D9
 /interface ethernet
 set [ find default-name=ether1 ] l2mtu=1508
 set [ find default-name=ether2 ] l2mtu=1508
@@ -997,14 +992,10 @@ set ssh address=192.168.50.0/28
 set api address=192.168.50.0/28
 set winbox address=10.0.50.0/24,192.168.50.0/28
 set api-ssl disabled=yes
-/ip ssh
-set allow-none-crypto=yes forwarding-enabled=remote
 /snmp
 set trap-target=192.168.50.6 trap-version=2
 /system clock
 set time-zone-name=Asia/Manila
-/system identity
-set name=JERIC-DOMAIN
 /system logging
 set 0 action=echo
 set 1 action=echo
@@ -1117,6 +1108,4 @@ add dont-require-permissions=no name=add-list owner=admin policy=\
     \n\r\
     \n/system logging enable 0;\r\
     \n:log info \"VPN icin ASN update tamamlandi.\";"
-/tool sniffer
-set filter-cpu=2 filter-interface=ether1,ether2 filter-stream=yes \
-    streaming-enabled=yes streaming-server=192.168.50.7
+
